@@ -1,5 +1,6 @@
 bin_PROGRAMS += g-ir-compiler g-ir-generate
 bin_SCRIPTS += g-ir-scanner g-ir-annotation-tool
+bin_PROGRAMS += g-ir-dep-tool
 
 if BUILD_DOCTOOL
 bin_SCRIPTS += g-ir-doc-tool
@@ -42,8 +43,15 @@ g_ir_generate_LDADD = \
 	libgirepository-1.0.la		\
 	$(GIREPO_LIBS)
 
+g_ir_dep_tool_SOURCES = tools/g-ir-dep-tool.c
+g_ir_dep_tool_CFLAGS = $(GIO_CFLAGS) -I$(top_srcdir)/girepository
+g_ir_dep_tool_LDADD = \
+        libgirepository-internals.la    \
+        libgirepository-1.0.la          \
+        $(GIREPO_LIBS)
+
 GCOVSOURCES =					\
 	$(g_ir_compiler_SOURCES)		\
 	$(g_ir_generate_SOURCES)
 
-CLEANFILES += g-ir-scanner g-ir-annotation-tool g-ir-doc-tool
+CLEANFILES += g-ir-scanner g-ir-annotation-tool g-ir-doc-tool g-ir-dep-tool
