@@ -1,6 +1,6 @@
 Name:           gobject-introspection
 Version:        1.34.0
-Release:        3.2
+Release:        0
 Summary:        GObject Introspection Tools
 License:        LGPL-2.1+ and GPL-2.0+
 Group:          Development/Libraries/GNOME
@@ -20,6 +20,7 @@ BuildRequires:  python-xml
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(cairo-gobject)
 BuildRequires:  pkgconfig(gobject-2.0)
+BuildRequires:  pkgconfig(gtk-doc)
 Requires:       libgirepository = %{version}
 Requires:       python-xml
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
@@ -69,6 +70,7 @@ a uniform, machine readable format.
 %endif
 
 %build
+gtkdocize --copy
 autoreconf -fi
 %configure \
 %if 0%{?BUILD_FROM_VCS}
@@ -126,7 +128,6 @@ diff -s %{S:3} gobject-introspection-typelib.installed
 
 %files devel
 %defattr(-,root,root)
-%doc %{_datadir}/gtk-doc/html/gi/
 %{_includedir}/gobject-introspection-1.0/
 %{_libdir}/libgirepository-1.0.so
 %{_libdir}/pkgconfig/gobject-introspection-1.0.pc
