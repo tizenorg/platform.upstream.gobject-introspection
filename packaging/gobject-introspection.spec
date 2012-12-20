@@ -1,5 +1,5 @@
 Name:           gobject-introspection
-Version:        1.35.2
+Version:        1.35.3
 Release:        0
 Summary:        GObject Introspection Tools
 License:        LGPL-2.1+ and GPL-2.0+
