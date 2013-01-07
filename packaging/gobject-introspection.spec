@@ -20,7 +20,7 @@ BuildRequires:  python-xml
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(cairo-gobject)
 BuildRequires:  pkgconfig(gobject-2.0)
-BuildRequires:  pkgconfig(gtk-doc)
+#BuildRequires:  pkgconfig(gtk-doc)
 Requires:       libgirepository = %{version}
 Requires:       python-xml
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
@@ -65,23 +65,15 @@ a uniform, machine readable format.
 %prep
 %setup -q
 
-%if 0%{?BUILD_FROM_VCS}
-[ -x ./autogen.sh ] && NOCONFIGURE=1 ./autogen.sh
-%endif
-
 %build
-gtkdocize --copy
-autoreconf -fi
+[ -x ./autogen.sh ] && NOCONFIGURE=1 ./autogen.sh
+#autoreconf -fi
 %configure \
-%if 0%{?BUILD_FROM_VCS}
-        --enable-gtk-doc \
-%endif
-        --disable-static
+        --disable-gtk-doc 
 %__make %{?_smp_mflags} V=1
 
 %install
 %make_install
-find %{buildroot} -type f -name "*.la" -delete -print
 install -D %{S:1} %{buildroot}%{_rpmconfigdir}/gi-find-deps.sh
 install -D %{S:2} -m 0644 %{buildroot}%{_rpmconfigdir}/fileattrs/gobjectintrospection.attr
 # comparing, if we provide all the symbols expected.
