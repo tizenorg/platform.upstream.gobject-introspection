@@ -20,7 +20,7 @@ BuildRequires:  python-xml
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(cairo-gobject)
 BuildRequires:  pkgconfig(gobject-2.0)
-BuildRequires:  pkgconfig(gtk-doc)
+#BuildRequires:  pkgconfig(gtk-doc)
 Requires:       libgirepository = %{version}
 Requires:       python-xml
 
