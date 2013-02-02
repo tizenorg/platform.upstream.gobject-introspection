@@ -1,5 +1,5 @@
 Name:           gobject-introspection
-Version:        1.35.3
+Version:        1.35.4
 Release:        0
 Summary:        GObject Introspection Tools
 License:        LGPL-2.1+ and GPL-2.0+
@@ -20,10 +20,9 @@ BuildRequires:  python-xml
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(cairo-gobject)
 BuildRequires:  pkgconfig(gobject-2.0)
-#BuildRequires:  pkgconfig(gtk-doc)
+BuildRequires:  pkgconfig(gtk-doc)
 Requires:       libgirepository = %{version}
 Requires:       python-xml
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
 The goal of the project is to describe the APIs and collect them in
@@ -90,7 +89,7 @@ diff -s %{S:3} gobject-introspection-typelib.installed
 
 %files
 %defattr(-,root,root)
-%doc COPYING COPYING.GPL
+%license COPYING COPYING.GPL
 %{_bindir}/g-ir-annotation-tool
 %{_bindir}/g-ir-compiler
 %{_bindir}/g-ir-dep-tool
