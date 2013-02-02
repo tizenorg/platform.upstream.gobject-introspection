@@ -1,3 +1,6 @@
+* Sat Feb 02 2013 Anas Nashif <anas.nashif@intel.com> submit/trunk/20130202.182003@200237a
+- remove gtk-doc dependency
+
 * Sat Feb 02 2013 Anas Nashif <anas.nashif@intel.com> GOBJECT_INTROSPECTION_1_35_4@7b86a1b
 - Update to 1.35.4
 
