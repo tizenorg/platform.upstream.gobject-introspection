@@ -1,9 +1,9 @@
 Name:           gobject-introspection
-Version:        1.35.4
+Version:        1.35.8
 Release:        0
 Summary:        GObject Introspection Tools
 License:        LGPL-2.1+ and GPL-2.0+
-Group:          Development/Libraries/GNOME
+Group:          Development/Libraries
 Url:            http://live.gnome.org/GObjectIntrospection
 Source0:        http://download.gnome.org/sources/gobject-introspection/1.34/%{name}-%{version}.tar.xz
 Source1:        gi-find-deps.sh
@@ -52,7 +52,7 @@ a uniform, machine readable format.
 %package devel
 Summary:        GObject Introspection Development Files
 License:        LGPL-2.1+
-Group:          Development/Libraries/GNOME
+Group:          Development/Libraries
 # Note: the devel package requires the binaries, not just the library
 Requires:       %{name} = %{version}
 Requires:       libffi-devel
