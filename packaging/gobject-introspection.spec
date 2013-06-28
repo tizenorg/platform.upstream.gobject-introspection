@@ -10,6 +10,7 @@ Source1:        gi-find-deps.sh
 Source2:        gobjectintrospection.attr
 Source3:        gobject-introspection-typelib.template
 Source99:       %{name}-rpmlintrc
+Source1001: 	gobject-introspection.manifest
 BuildRequires:  bison
 BuildRequires:  fdupes
 BuildRequires:  flex
@@ -63,6 +64,7 @@ a uniform, machine readable format.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 [ -x ./autogen.sh ] && NOCONFIGURE=1 ./autogen.sh
@@ -88,6 +90,7 @@ diff -s %{S:3} gobject-introspection-typelib.installed
 %docs_package
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %license COPYING COPYING.GPL
 %{_bindir}/g-ir-annotation-tool
@@ -107,6 +110,7 @@ diff -s %{S:3} gobject-introspection-typelib.installed
 %{_rpmconfigdir}/fileattrs/gobjectintrospection.attr
 
 %files -n libgirepository
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %doc COPYING.LGPL
 %dir %{_datadir}/gir-1.0
@@ -114,10 +118,12 @@ diff -s %{S:3} gobject-introspection-typelib.installed
 %dir %{_libdir}/girepository-1.0
 
 %files -n girepository
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_libdir}/girepository-1.0/*.typelib
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_includedir}/gobject-introspection-1.0/
 %{_libdir}/libgirepository-1.0.so
