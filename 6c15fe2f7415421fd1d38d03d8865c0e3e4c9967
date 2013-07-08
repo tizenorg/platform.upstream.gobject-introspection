@@ -1,0 +1,8 @@
+Change-Id: I6c15fe2f7415421fd1d38d03d8865c0e3e4c9967
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 09:40:50 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4734
+Project: platform/upstream/gobject-introspection
+Branch: refs/heads/tizen
