@@ -2,7 +2,7 @@ Name:           gobject-introspection
 Version:        1.36.0
 Release:        0
 Summary:        GObject Introspection Tools
-License:        LGPL-2.1+ and GPL-2.0+
+License:        LGPL-2.1 and GPL-2.0
 Group:          Development/Libraries
 Url:            http://live.gnome.org/GObjectIntrospection
 Source0:        http://download.gnome.org/sources/gobject-introspection/1.34/%{name}-%{version}.tar.xz
@@ -70,7 +70,7 @@ cp %{SOURCE1001} .
 [ -x ./autogen.sh ] && NOCONFIGURE=1 ./autogen.sh
 #autoreconf -fi
 %configure \
-        --disable-gtk-doc 
+        --disable-gtk-doc
 %__make %{?_smp_mflags} V=1
 
 %install
